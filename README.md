@@ -1,6 +1,6 @@
 # vue-admin
 
-> A Vue.js project
+> 项目脚手架，没有UI，方便些项目时候直接使用
 ## 使用的组件
 ``` bash
     axios   数据请求
