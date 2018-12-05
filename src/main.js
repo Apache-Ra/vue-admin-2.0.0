@@ -1,20 +1,23 @@
 import Vue from 'vue'
 import FastClick from 'fastclick'
+import ElementUI from 'element-ui'
+// import 'element-ui/lib/theme-chalk/index.css';
 import App from './App'
 import router from './router'
 import store from './store'
+Vue.use(ElementUI);
 /*
  * 定义常量
  */
 let DOMAIN_NAME = ''
-let SERVER_NAME = ''
+let SERVER_NAME = 'localhost:8080'
 let API_PREFIX = ''
 /**
  * 开发环境和发布环境变量
  */
 if (process.env.NODE_ENV === 'development') {
   DOMAIN_NAME = ''
-  SERVER_NAME = ''
+  SERVER_NAME = 'localhost:8080'
   API_PREFIX = ''
   console.log('开发环境')
 } else {

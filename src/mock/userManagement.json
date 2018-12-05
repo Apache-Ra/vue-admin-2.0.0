@@ -1,0 +1,52 @@
+{
+  "data": {
+    "administratorAccount": [
+      {
+        "userName": "Admin",
+        "userDescription": "超级管理员",
+        "userLevel": "管理员",
+        "createTime": "2018-02-28 17:23:36",
+        "changeTime": "2018-02-28 17:23:36"
+      }, {
+        "userName": "DongLei",
+        "userDescription": "测试账户",
+        "userLevel": "管理员",
+        "createTime": "2018-02-20 10:00:00",
+        "changeTime": "2018-02-22 12:00:00"
+      }
+    ],
+    "applicationAccount": [
+      {
+        "userName": "Root",
+        "channelName": ["小米", "华为"],
+        "userLevel": "管理员",
+        "whetherEnable": "🈲用",
+        "userDescription": "渠道测试",
+        "createTime": "2018-02-22 13:33:36",
+        "changeTime": "2018-02-22 15:12:23"
+      }, {
+        "userName": "Admin",
+        "channelName": ["华为"],
+        "userLevel": "管理员",
+        "whetherEnable": "启用",
+        "userDescription": "华为渠道测试",
+        "createTime": "2018-02-28 17:23:36",
+        "changeTime": "2018-02-28 17:23:36"
+      }
+    ],
+    "legalIP": [
+      {
+        "userName": "AppKey",
+        "IPAddress": "192.168.1.2",
+        "createTime": "2018-02-25 14:31:35",
+        "changeTime": "2018-02-25 15:13:01"
+      }, {
+        "userName": "AppKey",
+        "IPAddress": "192.168.1.3",
+        "createTime": "2018-02-25 14:35:40",
+        "changeTime": "2018-02-25 15:20:00"
+      }
+    ]
+  }
+}
+

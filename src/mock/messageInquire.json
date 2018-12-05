@@ -1,0 +1,51 @@
+{
+  "data": {
+    "originalInformation": [
+      {
+        "channelSerialNumber": "62559775182815326",
+        "applicationSerialNumber": "c9804ea846b89bc9cbffa6c91b6677f2",
+        "channelType": "03",
+        "sendType": "实时",
+        "planStartTime": "-",
+        "planEndTime": "-",
+        "priority": "5",
+        "representation": "campaign-bmonitor",
+        "sender": "10655777",
+        "recipient": "18601722407",
+        "messageType": "01",
+        "messageContent": "【告警】网络IT中心kafka...",
+        "longMessage": "是",
+        "middlewareStatusCode": "2000",
+        "middlewareStatusGenerationTime": "2018-03-14 13:16:06",
+        "middlewareStatusWriteTime": "2018-03-14 13:16:06",
+        "finalStatusCode": "-",
+        "finalStateGenerationTime": "-",
+        "finalStateWriteTime": "-",
+        "serialNumber_nodeID": "0",
+        "serialNumber_timeStamp": "314131705",
+        "serialNumber_serialNumber": "94",
+        "recordCreationTime": "2018-08-23 13:16:06",
+        "recordModificationTime": "2018-03-14 13:16:06",
+        "subData": [{
+            "sub-flowNumber": "62559777816838242",
+            "sub-textContent": "【告警】网络IT中心kafka集群-数据消费-异常。监控时间：03-14 13:05；摘要：[S1-U/s1u_2018010211",
+            "sub-SMSSerialNumber_nodeID": "0",
+            "sub-SMSSerialNumber_timeStamp": "314131705",
+            "sub-SMSSerialNumber_serialNumber": "98",
+            "finalState": "-"
+        }]
+      }
+    ],
+    "upstreamSMS": [{
+        "sendSerialNumber": "136364820823182046",
+        "channelType": "12",
+        "sender": "18512137961",
+        "recipient": "106557770001",
+        "replyContent": "123",
+        "responseTime": "2018-05-14 17:00:13",
+        "recordCreationTime": "2018-05-14 17:00:15",
+        "recordModificationTime": "2018-05-14 17:00:15"
+    }]
+  }
+}
+

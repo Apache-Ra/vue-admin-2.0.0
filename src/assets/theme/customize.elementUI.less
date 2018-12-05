@@ -1,0 +1,82 @@
+/*
+                   _ooOoo_
+                  o8888888o
+                  88" . "88
+                  (| -_- |)
+                  O\  =  /O
+               ____/`---'\____
+             .'  \\|     |//  `.
+            /  \\|||  :  |||//  \
+           /  _||||| -:- |||||-  \
+           |   | \\\  -  /// |   |
+           | \_|  ''\---/''  |   |
+           \  .-\__  `-`  ___/-. /
+         ___`. .'  /--.--\  `. . __
+      ."" '<  `.___\_<|>_/___.'  >'"".
+     | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+     \  \ `-.   \_ __\ /__ _/   .-` /  /
+======`-.____`-.___\_____/___.-`____.-'======
+                   `=---='
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+         佛祖保佑       永无BUG
+*/
+/**
+  自定义ElementUI样式文件
+*/
+@FBFBFB: #FBFBFB;
+@CCCCCC: #CCCCCC;
+@F3F3F3: #F3F3F3;
+@2DC3E8: #2DC3E8;
+@RGBA_0_0_0_15:rgba(0,0,0,.15);
+.box-shadow{
+  background-color: @FBFBFB;
+  box-shadow: inset 0 4px 4px -2px @RGBA_0_0_0_15, inset 0 -4px 4px -2px @RGBA_0_0_0_15;
+}
+body{
+  #app{
+    .app-container{width: 100%;height: 100%;
+      .header-container{height: 45px !important;padding: 0}
+    }
+    .el-header{padding: 0}
+    .el-submenu{border-bottom: 1px solid @F3F3F3;}
+    .el-menu-item{border-bottom: 1px solid @F3F3F3;}
+    .el-submenu{
+      .el-menu{box-shadow: inset 5px -5px 15px -5px #cccccc,inset 5px 5px 15px -5px #cccccc}
+      .el-menu li{}
+      .el-menu li:nth-last-child(1){border-bottom:none;}
+    }
+    .el-breadcrumb__inner a, .el-breadcrumb__inner.is-link{font-weight: 100;color: @2DC3E8;}
+    .el-breadcrumb__inner{font-weight: 100;}
+    .el-breadcrumb__separator{font-weight: 100;}
+    .el-button--mini{padding: 5px 10px;}
+    .formBar{.el-select{width: 100%;}}
+    .tableOperatingBar{
+      .el-input__inner{height: 36px;}
+      .el-form-item{margin: 0}
+      .el-input{}
+      .inlineBlockLabel{
+        .el-form-item__label{display: inline-block}
+        .el-form-item__content{}
+      }
+    }
+    .select_input_group{
+      .el-form-item__content{}
+      .group{display: inline-block;width: 48%;}
+      .group:nth-of-type(1){float: left}
+      .group:last-child{float: right}
+      .el-input{}
+    }
+    .time_picker{
+      .el-date-editor{width: 100%}
+    }
+    .formSelect{ .el-select{width: 50%} }
+    .formSelect_100{ .el-select{width: 100%} }
+    .formGroup{display: flex;
+      .el-select{width: 70%;margin-left: 10px;display: inline-block;}
+      .el-input--suffix{width: 70%;display: inline-block;}
+    }
+    .formBtnGroup{
+      //.el-form-item__content{text-align: right;}
+    }
+  }
+}

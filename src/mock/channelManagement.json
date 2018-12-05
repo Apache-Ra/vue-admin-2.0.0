@@ -1,0 +1,71 @@
+{
+  "data": {
+    "basicInformation": [
+      {
+        "channelName": "华为测试",
+        "channelType": "12",
+        "channelDescription": "短信",
+        "userLevel": "测试员",
+        "createTime": "2018-02-28 17:23:36",
+        "changeTime": "2018-02-28 17:23:36"
+      }, {
+        "channelName": "特殊短信",
+        "channelType": "10",
+        "channelDescription": "微信",
+        "userLevel": "管理员",
+        "createTime": "2018-02-20 10:00:00",
+        "changeTime": "2018-02-22 12:00:00"
+      }, {
+        "channelName": "自动订购渠道",
+        "channelType": "19",
+        "channelDescription": "-",
+        "userLevel": "管理员",
+        "createTime": "2018-02-20 10:00:00",
+        "changeTime": "2018-02-22 12:00:00"
+      }
+    ],
+    "fuseRule": [
+      {
+        "channelName": "特殊短信",
+        "channelType": "22",
+        "intervalTime": "10",
+        "intervalType": "分钟",
+        "upperLimit": "9999",
+        "fuseRule": "每10分钟不超过9999条",
+        "createTime": "2018-02-12 11:13:45",
+        "changeTime": "2018-02-16 09:03:31"
+      }, {
+        "channelName": "自动订购渠道",
+        "channelType": "19",
+        "intervalTime": "2",
+        "intervalType": "分钟",
+        "interval": "2分钟",
+        "upperLimit": "9999",
+        "fuseRule": "每2天不超过9999条",
+        "createTime": "2018-02-12 11:19:53",
+        "changeTime": "2018-02-16 12:03:11"
+      }
+    ],
+    "blacklist": [
+      {
+        "channelName": "特殊短信",
+        "channelType": "20",
+        "userAccount": "-",
+        "createTime": "2018-02-12 11:19:53",
+        "changeTime": "2018-02-16 12:03:11"
+      }
+    ],
+    "sendingTime": [
+      {
+        "channelName": "特殊短信",
+        "channelType": "20",
+        "startTime": "19:00:01",
+        "endTime": "20:00:00",
+        "sendingTime": "19:00:01 ~ 20:00:00",
+        "createTime": "2018-02-12 11:19:53",
+        "changeTime": "2018-02-16 12:03:11"
+      }
+    ]
+  }
+}
+
