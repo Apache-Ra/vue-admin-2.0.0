@@ -1,8 +1,14 @@
 # vue-admin
 
 > 项目脚手架，没有UI，方便些项目时候直接使用
+> 先前有朋友问我后台传递JSON数据，生成动态表单，如何操作，↓ 就顺手写了个案例，有些粗糙，但基本的东西都有
+> 当前分支基于vue-element 后台管理系统
+> 项目下载可直接运行，前面几个页面采用循环生产form表单，以及组件调用，传值
+> 后面几个组件，采用传统的组件调用
+> QQ交流群 514469203 
 ## 使用的组件
 ``` bash
+    Element
     axios   数据请求
     fastclick   点击延迟
     less less-loader  css预加载
@@ -13,6 +19,7 @@
 ## 工具类
 ``` bash
     Axios 二次封装axios
+    Format 时间日期的处理
     LocalStroage LocalStroage包装
     Cookie  Cookie包装
 ```
