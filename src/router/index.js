@@ -56,7 +56,7 @@ const router = new VueRouter({
       path: '/fuseRule',
       name: 'fuseRule',
       component: resolve => require(['../view/channelManagement/fuseRule.vue'], resolve),
-      meta: {title: '熔断规则', requireAuth: true}
+      meta: {title: '设定规则', requireAuth: true}
     }, {
       path: '/blacklist',
       name: 'blacklist',
@@ -76,42 +76,42 @@ const router = new VueRouter({
       path: '/upstreamSMS',
       name: 'upstreamSMS',
       component: resolve => require(['../view/messageInquire/upstreamSMS.vue'], resolve),
-      meta: {title: '上行短信', requireAuth: true}
+      meta: {title: '短信配置', requireAuth: true}
     }, {
       path: '/sendTest',
       name: 'sendTest',
       component: resolve => require(['../view/sendTest/sendTest.vue'], resolve),
-      meta: {title: '发送测试', requireAuth: true}
+      meta: {title: '发送管理', requireAuth: true}
     }, {
       path: '/operationalIndicator',
       name: 'operationalIndicator',
       component: resolve => require(['../view/operationMonitoring/operationalIndicator.vue'], resolve),
-      meta: {title: '运行指标', requireAuth: true}
+      meta: {title: '运行管理', requireAuth: true}
     }, {
       path: '/SMS_sendingStatus',
       name: 'SMS_sendingStatus',
       component: resolve => require(['../view/runningLog/SMS_sendingStatus.vue'], resolve),
-      meta: {title: '短信发送状态', requireAuth: true}
+      meta: {title: '短信状态', requireAuth: true}
     }, {
       path: '/SMS_reception',
       name: 'SMS_reception',
       component: resolve => require(['../view/runningLog/SMS_reception.vue'], resolve),
-      meta: {title: '短信接收量', requireAuth: true}
+      meta: {title: '短信接收', requireAuth: true}
     }, {
       path: '/apiCallHistory',
       name: 'apiCallHistory',
       component: resolve => require(['../view/runningLog/apiCallHistory.vue'], resolve),
-      meta: {title: '接口调用历史', requireAuth: true}
+      meta: {title: '调用历史', requireAuth: true}
     }, {
       path: '/waitingQueue',
       name: 'waitingQueue',
       component: resolve => require(['../view/runningLog/waitingQueue.vue'], resolve),
-      meta: {title: '等待队列', requireAuth: true}
+      meta: {title: '队列管理', requireAuth: true}
     }, {
       path: '/projectLog',
       name: 'projectLog',
       component: resolve => require(['../view/runningLog/projectLog.vue'], resolve),
-      meta: {title: '项目日志', requireAuth: true}
+      meta: {title: '日志管理', requireAuth: true}
     }
   ]
 })
