@@ -1,6 +1,6 @@
 <template>
   <div class="headerBar flex-0-auto">
-    <div class="logo"><img src="../../assets/image/logo.gif"></div>
+    <div class="logo"><img src="../../assets/logo.png"></div>
     <div class="loginOut">退出</div>
   </div>
 </template>
