@@ -11,7 +11,7 @@
 > QQ交流群 514469203 
 ## 使用的组件
 ``` bash
-    Element
+    Element UI
     axios   数据请求
     fastclick   点击延迟
     less less-loader  css预加载
