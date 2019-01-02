@@ -20,16 +20,17 @@ const scrollBehavior = (to, from, savedPosition) => {
  *  @scrollBehavior: 配置滚动条的位置
  */
 const router = new VueRouter({
-  mode: 'history',
+  // mode: 'history',
   base: __dirname,
   likActiveClass: 'link-active',
   scrollBehavior,
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: 'login',
+      // component: resolve => require.ensure([], () => resolve(require('@/view/home')), 'home'),
       component: resolve => require(['../view/home.vue'], resolve),
-      meta: {title: '首页', requireAuth: false}
+      meta: {title: '主页', requireAuth: false}
     }
   ]
 })
