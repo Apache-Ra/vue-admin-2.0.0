@@ -22,12 +22,12 @@
 <script>
   // 菜单栏
   const gridList = [
-    {link: '/', label: '便民出行', ico: ''},
-    {link: '/', label: '利民优享', ico: ''},
-    {link: '/', label: '与民方便', ico: ''},
-    {link: '/', label: '松石专柜', ico: ''},
-    {link: '/', label: '求贤若渴', ico: ''},
-    {link: '/', label: '周边圈子', ico: ''}
+    {link: '/', label: 'A', ico: ''},
+    {link: '/', label: 'B', ico: ''},
+    {link: '/', label: 'C', ico: ''},
+    {link: '/', label: 'D', ico: ''},
+    {link: '/', label: 'E', ico: ''},
+    {link: '/', label: 'F', ico: ''}
   ]
   import {Grid, GridItem, Badge} from 'vux'
 

@@ -1,20 +1,20 @@
 <template>
-  <div class='messageListBar'>
+  <div class='ListBar'>
     <panel
-      :header="messageTitle"
-      :list="messageList"
-      :type="messageType"></panel>
+      :header="title"
+      :list="list"
+      :type="type"></panel>
   </div>
 </template>
 
 <script>
   import { Panel, Group } from 'vux'
-  const messageList = [
+  const list = [
     {
       src: '',
-      title: '车找人',
-      desc: '明天上午8:00-12:00 上海前往昆山，小车（私家车顺路）',
-      url: '/component/cell',
+      title: '',
+      desc: '您的账户实名认证通过啦',
+      url: '/',
       meta: {
         source: '站内信',
         date: '2019-03-03',
@@ -22,9 +22,19 @@
       }
     }, {
       src: '',
-      title: '人找车',
-      desc: '明天下午江苏南通回上海长宁区域（中山公园附近），两个人，一个行李',
-      url: '/component/cell',
+      title: '',
+      desc: '头像审核通过啦',
+      url: '/',
+      meta: {
+        source: '站内信',
+        date: '2019-03-03',
+        other: 'Ra'
+      }
+    }, {
+      src: '',
+      title: '',
+      desc: '注册成功',
+      url: '/',
       meta: {
         source: '站内信',
         date: '2019-03-03',
@@ -35,7 +45,7 @@
   export default {
     // 组建的名称
     title: '消息列表组件',
-    name: 'messageListBar',
+    name: 'listBar',
     /**
      * 子组建传值
      * objData: {
@@ -55,9 +65,9 @@
     components: {Panel, Group},
     data() {
       return {
-        messageTitle: '',
-        messageType: '5',
-        messageList: messageList
+        title: '',
+        type: '5',
+        list: list
       }
     },
     // 初始化记载

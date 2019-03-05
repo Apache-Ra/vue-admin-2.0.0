@@ -1,13 +1,17 @@
 <template>
   <div id="app">
+    <!--<HeaderBar></HeaderBar>-->
     <router-view  v-if="isRouterAlive"></router-view>
+    <FooterBar></FooterBar>
   </div>
 </template>
 
 <script>
+  import HeaderBar from './components/layout/headerBar'
+  import FooterBar from './components/layout/footerBar'
 export default {
   name: 'App',
-  components: {},
+  components: {HeaderBar, FooterBar},
   provide() {
     return {
       reload: this.reload
