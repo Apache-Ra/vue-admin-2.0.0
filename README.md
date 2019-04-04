@@ -1,6 +1,11 @@
 # vue-admin
-
 > 项目脚手架，没有UI，方便些项目时候直接使用
+>
+> 分支包含Element UI后台管理系统demo
+>
+> 分支包含Iview UI后台管理系统demo
+>
+> 分支包含vux wechat项目demo
 ## 使用的组件
 ``` bash
     axios   数据请求
@@ -13,7 +18,7 @@
 ## 工具类
 ``` bash
     Axios 二次封装axios
-    LocalStroage LocalStroage包装
+    LocalStage LocalStroage包装
     Cookie  Cookie包装
 ```
 ## Build Setup
