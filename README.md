@@ -39,4 +39,10 @@ npm run build
 npm run build --report
 ```
 
-如有好的想法或者建议-- [新浪微博](http://weibo.com/818qizai898) and [CSDN](https://blog.csdn.net/u013216976).
+[新浪微博](http://weibo.com/818qizai898) 
+
+文档以其它笔记[CSDN](https://blog.csdn.net/u013216976)
+
+框架来源[vue-admin](https://github.com/Apache-Ra/vue-admin.git)
+
+加入群聊[vue](https://jq.qq.com/?_wv=1027&k=5Yz7hvq)
