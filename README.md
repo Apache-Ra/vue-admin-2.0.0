@@ -6,6 +6,8 @@
 > 分支包含Iview UI后台管理系统demo
 >
 > 分支包含vux wechat项目demo
+>
+> 建议使用master分支（将拆成三个admin），一些工具类的是使用案例，详见[CSDN](https://blog.csdn.net/u013216976)
 ## 使用的组件
 ``` bash
     axios   数据请求

@@ -6,16 +6,6 @@
  * 2018-06-03 重构Storage
  * 2019-02-18 修改 constructor中默认STORAGE_KEY
  */
-
-/***
- * 使用方法：适用于同一个域名下不同项目
- * import local form 'local'
- * let Local = new local('域名，可以不填写')
- * Local.setParam('userInfo', {nickName: 'Ra'})
- * xxx.xxx.con    {userInfo: {nickName: 'Ra'}}
- * Local.getParam('userInfo').then(data =>{})
- */
-
 import extend from 'Extend';
 import urlParam from './URLParam'
 

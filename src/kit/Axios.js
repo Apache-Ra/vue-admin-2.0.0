@@ -1,3 +1,7 @@
+/**
+ * Axios 请求二次封装
+ */
+
 import Vue from 'vue'
 import Axios from 'axios'
 import router from '../router'
