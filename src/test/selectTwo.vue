@@ -34,23 +34,36 @@
       </el-dialog>
 
       <!---->
-      <el-table
-        :data="tableData"
-        border
-        style="width: 100%">
+      <el-table :data="tableData" :span-method="objectSpanMethod" border style="width: 100%">
         <el-table-column
           v-for="(item, key) in tableTitle"
+          :width="(item.width)"
           :key="key"
           :prop="item.prop"
-          :label="item.label"
-          width="">
+          :label="item.label">
+        </el-table-column>
+
+        <el-table-column
+          fixed="right"
+          label="学科代码">
+          <template slot-scope="scope">
+            <el-select v-model="scope.row.subjectKey" multiple placeholder="请选择">
+              <el-option
+                v-for="(item, key) in scope.row.subjectOptions"
+                :key="key"
+                :label="item.value"
+                :value="item.value">
+              </el-option>
+            </el-select>
+          </template>
         </el-table-column>
 
         <el-table-column
           fixed="right"
           label="操作"
-          width="100">
+          width="180">
           <template slot-scope="scope">
+            <el-button @click="handleClickCopy(scope.row)" type="text" size="small">复制</el-button>
             <el-button @click="handleClickEdit(scope.row)" type="text" size="small">编辑</el-button>
             <el-button @click="handleClickDelete(scope.row)" type="text" size="small">删除</el-button>
           </template>
@@ -65,25 +78,33 @@
   import {SUBJECT} from '../dictionary/index'
   import _ from 'lodash'
 
-  const getTableData = (vue, APIData) =>{
+  const getTableData = (vue, APIData) => {
     vue.tableData = []
-    _.forEach(APIData, item =>{
+    _.forEach(APIData, item => {
       // 清空数组
-      let subjectArray = [];
+      let subjectVal = [];
+      let subjectKey = []
+      let subjectOptions = []
       let subject = '';
       // 通过数据字典转义key
-      _.forEach(item.subject.split(','), item =>{
+      _.forEach(item.subject.split(','), item => {
+        subjectKey.push(item)
         const subject_ = SUBJECT.find(item_ => +item_.value == item).label
-        subjectArray.push(subject_);
+        subjectVal.push(subject_);
+        subjectOptions.push({
+          label: SUBJECT.find(item_ => +item_.value == item).label,
+          value: item
+        })
       });
-      // 拼接成字符串
-      subject = subjectArray.toString();
+
       // push到数组
       vue.tableData.push({
         id: item.id,
+        period: item.period,
         dateTime: item.dateTime,
-        subjectKeyArray: item.subject,
-        subject: subject
+        subjectKey: subjectKey,
+        subjectVal: subjectVal.toString(),
+        subjectOptions: subjectOptions
       })
     })
   }
@@ -99,16 +120,32 @@
   ]
   // 表格表头数据
   const tableTitle = [
-    {prop: 'dateTime', label: '日期'},
-    {prop: 'subject', label: '学科'}
+    {prop: 'dateTime', label: '日期', width: '180'},
+    {prop: 'period', label: '时段', width: '180'},
+    {prop: 'subjectVal', label: '学科名称'}
   ]
   // 模拟接口返回的数据
   const APIData = [
-    {id: 1, dateTime: '2019-04-04', subject: '1,2,3,4,5,6'},
-    {id: 2, dateTime: '2019-04-03', subject: '1,2,3'},
-    {id: 3, dateTime: '2019-04-02', subject: '3'},
+    {id:1, dateTime: '2019-03-01', period: '上午', subject: '1,4,6'},
+    {id:2, dateTime: '2019-03-01', period: '中午', subject: '2,4,6'},
+    {id:3, dateTime: '2019-03-01', period: '下午', subject: '1,2,5'},
+
+    {id:4, dateTime: '2019-03-02', period: '上午', subject: '1,4,6'},
+    {id:5, dateTime: '2019-03-02', period: '中午', subject: '3,5,6'},
+    {id:6, dateTime: '2019-03-02', period: '下午', subject: '2,5,6'}
   ]
 
+
+  const ArrayList = [
+    {
+      list_1:[],
+      list_2:[]
+    },
+    {
+      list_1:[],
+      list_2:[]
+    }
+  ]
   export default {
     // 组建的名称
     title: 'selectTwo测试组件',
@@ -135,7 +172,7 @@
       return {
         contentForm: {},
         dialogVisible: false,
-        dialogForm:{
+        dialogForm: {
           subject: []
         },
         subjectOptions: subjectOptions,
@@ -148,6 +185,7 @@
       let vue = this;
       // 初始化数据
       getTableData(vue, APIData)
+      console.log(vue.tableData)
     },
     // DOM加载完毕执行操作
     mounted() {
@@ -155,31 +193,52 @@
     // 事件处理
     methods: {
       // 执行添加
-      onClickAdd(){
+      onClickAdd() {
         let vue = this;
         vue.dialogForm.subject = []
         vue.dialogVisible = true
       },
       // 关闭弹出层
-      handleClose(done){
+      handleClose(done) {
         let vue = this;
         vue.dialogVisible = false
       },
+      // 表格数据复制
+      handleClickCopy(item) {
+
+      },
       // 表格编辑
-      handleClickEdit(item){
+      handleClickEdit(item) {
         let vue = this;
-        vue.dialogForm.subject = item.subjectKeyArray.split(',')
+        console.log(item.subjectKey)
+        vue.dialogForm.subject = item.subjectKey
         vue.dialogVisible = true
       },
       // 表格删除
-      handleClickDelete(item){
+      handleClickDelete(item) {
         console.log(item)
       },
       // 弹出层保存
-      onClickFromAdd(){
+      onClickFromAdd() {
         let vue = this;
-        console.log('%c 保存提交的数据: '+vue.dialogForm.subject ,'background:#CCC;color:#FFF');
+        console.log('%c 保存提交的数据: ' + vue.dialogForm.subject, 'background:#CCC;color:#FFF');
         vue.dialogVisible = false
+      },
+
+      objectSpanMethod({row, column, rowIndex, columnIndex}) {
+        if (columnIndex === 0) {
+          if (rowIndex % 3 === 0) {
+            return {
+              rowspan: 3,
+              colspan: 1
+            };
+          } else {
+            return {
+              rowspan: 0,
+              colspan: 0
+            };
+          }
+        }
       }
     },
     // 离开路由的操作
@@ -194,5 +253,17 @@
     margin-bottom: 10px;
     padding: 10px;
     text-align: right;
+  }
+
+  .el-table__row {
+    .el-select {
+      width: 100%;
+    }
+  }
+
+  .el-dialog__body {
+    .el-select {
+      width: 100%;
+    }
   }
 </style>

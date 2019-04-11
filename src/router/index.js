@@ -112,6 +112,11 @@ const router = new VueRouter({
       name: 'projectLog',
       component: resolve => require(['../view/runningLog/projectLog.vue'], resolve),
       meta: {title: '日志管理', requireAuth: true}
+    }, {
+      path: '/selectTwo',
+      name: 'selectTwo',
+      component: resolve => require(['../test/selectTwo.vue'], resolve),
+      meta: {title: '测试DEMO', requireAuth: false}
     }
   ]
 })
