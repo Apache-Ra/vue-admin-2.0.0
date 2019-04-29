@@ -117,6 +117,11 @@ const router = new VueRouter({
       name: 'selectTwo',
       component: resolve => require(['../test/selectTwo.vue'], resolve),
       meta: {title: '测试DEMO', requireAuth: false}
+    }, {
+      path: '/tab',
+      name: 'tab',
+      component: resolve => require(['../test/tab.vue'], resolve),
+      meta: {title: '测试DEMO', requireAuth: false}
     }
   ]
 })
