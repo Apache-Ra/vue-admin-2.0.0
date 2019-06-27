@@ -19,7 +19,7 @@
 const footerBarList = [
   {src: '', label: '首页',link: '/', badge: ''},
   {src: '', label: '应用',link: '/application', badge: ''},
-  {src: '', label: '发布',link: '/release', badge: ''},
+
   {src: '', label: '消息',link: '/message', badge: ''},
   {src: '', label: '我的',link: '/mine', badge: ''}
 ]

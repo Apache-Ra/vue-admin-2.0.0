@@ -28,19 +28,14 @@ const router = new VueRouter({
     {
       path: '/',
       name: 'application',
-      component: resolve => require.ensure([], () => resolve(require('@/view/home/home')), 'home'),
+      component: resolve => require.ensure([], () => resolve(require('@/view/home')), 'home'),
       meta: {title: '首页', requireAuth: false}
     }, {
       path: '/application',
       name: 'application',
       component: resolve => require.ensure([], () => resolve(require('@/view/application/application')), 'application'),
       meta: {title: '应用', requireAuth: false}
-    }, {
-      path: '/release',
-      name: 'release',
-      component: resolve => require.ensure([], () => resolve(require('@/view/releaseInfo/release')), 'release'),
-      meta: {title: '发布', requireAuth: false}
-    }, {
+    },{
       path: '/message',
       name: 'message',
       component: resolve => require.ensure([], () => resolve(require('@/view/message/message')), 'message'),
@@ -49,7 +44,7 @@ const router = new VueRouter({
       path: '/mine',
       name: 'mine',
       component: resolve => require.ensure([], () => resolve(require('@/view/mine/mine')), 'message'),
-      meta: {title: '消息', requireAuth: false}
+      meta: {title: '我的', requireAuth: false}
     }
   ]
 })

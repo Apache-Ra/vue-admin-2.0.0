@@ -4,8 +4,10 @@
       <img :src="blurData.bg_src">
     </div>
     <div class="blurInfo">
+      <div class="blurInfo_con">
       <p class="center"><img :src="blurData.img_src"></p>
       <p class="center">{{blurData.tel}}</p>
+      </div>
     </div>
   </div>
 </template>
@@ -76,9 +78,13 @@
 
     .blurInfo {
       position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: 100%;
       height: 250px;
-      top: 0
+      top: 0;
+      .blurInfo_con{height: 100px;}
     }
 
     .center {

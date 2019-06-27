@@ -1,6 +1,6 @@
 <template>
   <div class='headerBar'>
-    <x-header></x-header>
+    <x-header class="headerBar">XXX</x-header>
   </div>
 </template>
 <script>
@@ -44,5 +44,4 @@ export default {
 </script>
 
 <style scoped lang='less'>
-
 </style>
