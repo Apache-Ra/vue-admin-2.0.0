@@ -10,7 +10,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-
+const PrerenderSpaPlugin = require('prerender-spa-plugin')
+const Renderer = PrerenderSpaPlugin.PuppeteerRenderer
 const env = require('../config/prod.env')
 
 const webpackConfig = merge(baseWebpackConfig, {
@@ -46,7 +47,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       filename: utils.assetsPath('css/[name].[contenthash].css'),
       // Setting the following option to `false` will not extract CSS from codesplit chunks.
       // Their CSS will instead be inserted dynamically with style-loader when the codesplit chunk has been loaded by webpack.
-      // It's currently set to `true` because we are seeing that sourcemaps are included in the codesplit bundle as well when it's `false`, 
+      // It's currently set to `true` because we are seeing that sourcemaps are included in the codesplit bundle as well when it's `false`,
       // increasing file size: https://github.com/vuejs-templates/webpack/issues/1110
       allChunks: true,
     }),
@@ -115,7 +116,32 @@ const webpackConfig = merge(baseWebpackConfig, {
         to: config.build.assetsSubDirectory,
         ignore: ['.*']
       }
-    ])
+    ]),
+    /**
+     * ---------------------------------------------------------------------------
+     * ---------------------------------------------------------------------------
+     */
+
+    new PrerenderSpaPlugin({
+      // Absolute path to compiled SPA
+      staticDir: path.join(__dirname, '../dist'),
+      // 列出需要预渲染的路由名称
+      // 如果没有对应的路由，也会生成对应的目录
+      routes: ['/home', '/about'],
+      // 这个很重要，如果没有配置这段，也不会进行预编译
+      renderer: new Renderer({
+        // 触发渲染的时间，用于获取数据后再保存渲染结果
+        renderAfterTime: 10000,
+        // 是否打开浏览器，false 是打开。可用于 debug 检查渲染结果
+        headless: 'debug'
+
+      })
+    }),
+
+    /**
+     * ---------------------------------------------------------------------------
+     * ---------------------------------------------------------------------------
+     */
   ]
 })
 
