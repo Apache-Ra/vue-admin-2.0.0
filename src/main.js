@@ -1,17 +1,14 @@
 import Vue from 'vue'
 import FastClick from 'fastclick'
+import MetaInfo from 'vue-meta-info'
 import App from './App'
 import router from './router'
 import store from './store'
-/*
- * 定义常量
- */
+
 let DOMAIN_NAME = ''
 let SERVER_NAME = ''
 let API_PREFIX = ''
-/**
- * 开发环境和发布环境变量
- */
+
 if (process.env.NODE_ENV === 'development') {
   DOMAIN_NAME = ''
   SERVER_NAME = ''
@@ -23,23 +20,24 @@ if (process.env.NODE_ENV === 'development') {
   SERVER_NAME = ''
   API_PREFIX = ''
 }
+
+Vue.use(MetaInfo)
+
 Vue.prototype.DOMAIN_NAME = DOMAIN_NAME
 Vue.prototype.SERVER_NAME = SERVER_NAME
 Vue.prototype.API_PREFIX = API_PREFIX
-/**
- *  日志输出开关
- */
+
 Vue.config.productionTip = false
-/**
- *  点击延迟
- */
+
 FastClick.attach(document.body)
-/**
- *  创建实例
- */
+
 new Vue({
-  store,
+  el: '#app',
   router,
-  render: h => h(App)
-}).$mount('#app')
+  store,
+  render: h => h(App),
+  mounted () {
+    document.dispatchEvent(new Event('render-event'))
+  }
+})
 
