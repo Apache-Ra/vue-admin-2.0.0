@@ -134,7 +134,6 @@ const webpackConfig = merge(baseWebpackConfig, {
         renderAfterTime: 10000,
         // 是否打开浏览器，false 是打开。可用于 debug 检查渲染结果
         headless: 'debug'
-
       })
     }),
 
