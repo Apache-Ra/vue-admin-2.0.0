@@ -8,7 +8,7 @@
 > 分支包含vux wechat项目demo
 >
 > 建议使用master分支（将拆成三个admin），一些工具类的是使用案例，详见[CSDN](https://blog.csdn.net/u013216976)
-## 使用的组件
+## 使用的组件和工具类
 ``` bash
     axios   数据请求
     fastclick   点击延迟
@@ -16,9 +16,6 @@
     lodash  数组处理
     uuid ID   （uuid.v4()）
     vuex  状态分发
-```
-## 工具类
-``` bash
     Axios 二次封装axios
     LocalStage LocalStroage包装
     Cookie  Cookie包装
@@ -39,10 +36,12 @@ npm run build
 npm run build --report
 ```
 
-[新浪微博](http://weibo.com/818qizai898) 
+[新浪微博](http://weibo.com/818qizai898)
 
 文档以其它笔记[CSDN](https://blog.csdn.net/u013216976)
 
 框架来源[vue-admin](https://github.com/Apache-Ra/vue-admin.git)
+
+友情提供[socket测试地址](http://www.omyall.cn/socket/)和[直播流（rtmp/hls）测试](http://www.omyall.cn/live/)
 
 加入群聊[vue](https://jq.qq.com/?_wv=1027&k=5Yz7hvq)
